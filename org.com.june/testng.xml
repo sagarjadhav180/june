@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sagar ji ka Suite" parallel="tests" thread-count="2" >
+  
+  
+
+         <test name="firefox test" preserve-order="true" parallel="false" > 
+         
+            <parameter name="browser" value="firefox"/>
+  <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
+             <classes>               
+                <class name="org.com.automation.practise.AllNewLogics"> 
+            
+            <methods>
+                
+                <include name="test24"/>
+                
+                </methods>
+            
+            </class>
+            
+            
+            </classes>   
+       </test> <!-- Test -->  
+  
+
+  
+
+        <test name="chrome test" preserve-order="true" parallel="false" > 
+        
+           <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
+        
+             <classes>               
+                <class name="org.com.automation.practise.AllNewLogics"> 
+            
+            <methods>
+                
+                <include name="test24"/>
+                
+                </methods>
+            
+            
+            </class>
+            
+            </classes>   
+       </test> <!-- Test -->  
+ 
+  
+  
+  
+</suite> <!-- Suite -->
