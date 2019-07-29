@@ -935,7 +935,7 @@ public class AllNewLogics
 
 	
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public static void test26()
 	{
 
