@@ -62,7 +62,7 @@ import com.googlecode.charts4j.Slice;
 
 public class AllNewLogics  
 {
-	
+	//palindrome
 	@Test(enabled=false)
 	public void test1() {
 
@@ -89,6 +89,7 @@ public class AllNewLogics
     }
 
 
+	//Date
 	@Test(enabled=false)
 	public void test2()
 	{
@@ -99,6 +100,7 @@ public class AllNewLogics
 		
 	}
 	
+	//HashMap
 	@Test(enabled=false)
 	public void test3()
 	{
@@ -184,7 +186,7 @@ public class AllNewLogics
 	
 	
 	
-	
+	//Open-Close curls
 	@Test(enabled=false)
 	public void test4()
 	{
@@ -339,7 +341,7 @@ public class AllNewLogics
 		
 	}
 	
-	
+	//String
 	@Test(enabled=false)
 	public void test6()
 	{
@@ -350,190 +352,10 @@ public class AllNewLogics
 	
 	
 
-	@Test(enabled=false)
-	public void test7()
-	{
-
-		int count=6;
-		
-		
-		for(int row=1;row<4;row++)
-		{
-			for(int i=1;i<count+1;i++)
-			{
-				if(row==1 && i==1 || row==2 && i>4 || row==3 && i<4)
-				{System.out.print("*");}
-				else{
-				System.out.print("#");
-				}
-				
-				 
-			
-			}
-			System.out.println();
-		}
-		
-		
-	}
-	 
-
-	@Test(enabled=false)
-	public void test8()
-	{
-		int star=5;
-		int space=0;
-		int row=5;
-		int mid=(row/2);
-		
-		for(int i=1;i<row+1;i++)
-		{
-			for(int j=0;j<space;j++)
-			{
-				System.out.print(" ");
-			}
-			for(int k=1;k<star+1;k++)
-			{
-				System.out.print("*");
-			}
-			System.out.println();
-		
-			if(i<=mid){
-			star=star-2;
-			
-			space++;
-			}
-			else{space--;
-			star=star+2;}
-			
-		}
-	}
-	
-
-	@Test(enabled=false)
-	public void test9()
-	{
-		int star=1;
-		int row=5;
-		
-		for(int i=1;i<row+1;i++)
-		{
-			for(int j=0;j<star;j++)
-			{
-				System.out.print("*");
-			}
-
-			star=star+2;
-			System.out.println();		
-		}
-		
-	}
-	
-	@Test(enabled=false)
-	public void test10()
-	{
-		int star=5;
-		int row=5;
-		int mid=(row+1)/2;
-		int space=0;
-		
-		for(int i=1;i<row+1;i++)
-		{
-			for(int j=0;j<space;j++)
-			{
-				System.out.print(" ");
-			}
-			for(int k=0;k<star;k++)
-			{
-				System.out.print("*");
-			}
-			System.out.println();
-			
-			if(i<mid)
-			{
-				star=star-2;
-				space++;
-			}
-			else if(i>=mid)
-			{
-				star=star+2;
-				space--;
-			}
-		}
-
-		
-	}
-	
-
-	@Test(enabled=false)
-	public void test11()
-	{
-		int star=5;
-		int row=5;
-		int mid=(row+1)/2;
-		int space=0;
-		
-		
-		for(int i=1;i<row+1;i++)
-		{
-			for(int j=0;j<space;j++)
-			{
-				System.out.print(" ");
-			}
-			for(int k=0;k<star;k++)
-			{
-				System.out.print("*");
-			}
-			System.out.println();
-			
-			if(i<mid){
-			space=space+2;
-			star=star-2;
-			}
-			else if(i>=mid){
-				space=space-2;
-				star=star+2;
-			}
-		}
-	}
-	
-
-
-	@Test(enabled=false)
-	public void test12()
-	{
-		int star=5;
-		int space=0;
-		int rows=5;
-		int mid=(rows+1)/2;
-		
-		for(int i=1;i<rows+1;i++)
-		{
-			for(int j=1;j<space+1;j++)
-			{
-				System.out.print(" ");
-			}
-			for(int k=1;k<star+1;k++)
-			{
-				System.out.print("*");
-			}
-			System.out.println();
-			if(i<mid)
-			{
-				space++;
-				star=star=star-2;
-			}
-			else if (i>=
-					mid)
-			{
-				star=star+2;
-				space--;	
-			}
-		}
-	}
 	
 	
 	//pie chart
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void test13()
 	{
 		int passed=400;
@@ -543,15 +365,16 @@ public class AllNewLogics
 		int passed_percentage = (passed == 0) ? 0 : (passed * 100 / total);
 		int failed_percentage = (failed == 0) ? 0 : (failed * 100 / total);
 		int skipped_percentage = (skipped == 0) ? 0 : (skipped * 100 / total);
-		Slice s1 = Slice.newSlice(passed_percentage, Color.BLUE, "Passed", "Passed");
-		Slice s2 = Slice.newSlice(failed_percentage, Color.RED, "Failed", "Failed");
+		Slice s1 = Slice.newSlice(passed_percentage, Color.BLUE, "Passed", String.valueOf(passed_percentage).concat("%"));
+		Slice s2 = Slice.newSlice(failed_percentage, Color.RED, "Failed", String.valueOf(failed_percentage).concat("%"));
 //		Slice s3 = Slice.newSlice(skipped_percentage, Color.newColor("CACACA"), "Skipped", "Skipped");
-		Slice s3 = Slice.newSlice(skipped_percentage, Color.ORANGE, "Skipped", "Skipped");
+		Slice s3 = Slice.newSlice(skipped_percentage, Color.ORANGE, "Skipped", String.valueOf(skipped_percentage).concat("%"));
 		
 		PieChart chart = GCharts.newPieChart(s1, s2, s3);
 		chart.setTitle("CFA API Automation Result", Color.BLACK, 16);
 		chart.setSize(500, 200);
 		chart.setThreeD(true);
+		
 		String url = chart.toURLString();
 		System.out.println("Pie chart is created");
 		System.out.println(url); 
@@ -935,12 +758,7 @@ public class AllNewLogics
 
 	
 
-	@Test(enabled=false)
-	public static void test26()
-	{
-
 	
-	}	
 	
 	
 	
