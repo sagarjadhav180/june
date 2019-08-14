@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [Sagar ji ka Suite]" parallel="tests">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
-  <test thread-count="4" name="Test-1(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Sagar ji ka Suite]" parallel="tests">
+  <test thread-count="2" name="chrome test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
     <classes>
       <class name="org.com.automation.practise.AllNewLogics">
         <methods>
@@ -11,14 +11,5 @@
         </methods>
       </class> <!-- org.com.automation.practise.AllNewLogics -->
     </classes>
-  </test> <!-- Test-1(failed) -->
-  <test thread-count="4" name="Test-2(failed)">
-    <classes>
-      <class name="org.com.automation.practise.AllNewLogics">
-        <methods>
-          <include name="test24" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- org.com.automation.practise.AllNewLogics -->
-    </classes>
-  </test> <!-- Test-2(failed) -->
+  </test> <!-- chrome test(failed) -->
 </suite> <!-- Failed suite [Sagar ji ka Suite] -->

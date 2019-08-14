@@ -24,10 +24,16 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.BasicHttpContext;
+import org.apache.http.protocol.HttpContext;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -40,6 +46,8 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,6 +56,7 @@ import org.openqa.selenium.firefox.NotConnectedException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -505,7 +514,7 @@ public class AllNewLogics
 	@Test(enabled=false)
 	public void test16()
 	{
-		int a=5;
+		int a=55;
 		int b=10;
 		
 		boolean c=a<b ? true:false;
@@ -522,7 +531,9 @@ public class AllNewLogics
 		
 		for(float val:vals)
 		{
-			sum +=val;
+//			sum +=val;
+			
+			sum=sum+val;
 			
 		}
 		System.out.println(sum);
@@ -533,23 +544,38 @@ public class AllNewLogics
 	@Test(enabled=false)
 	public void test18()
 	{
-		int ival;
+//		int ival;
+//		
+//		switch( ival=26-10)
+//		{
+//		
+//		case 0:
+//			System.out.println("ival is even");
+//		break;
+//			
+//		case 1:
+//			System.out.println("ival is odd");
+//			break;
+//			
+//			
+//			default:
+//			System.out.println("break the loop");
+//		}
 		
-		switch( ival=25%2)
-		{
 		
-		case 0:
-			System.out.println("ival is even");
+		
+		int m;
+		switch(m=10%5){
+		
+		case 0 : System.out.println("even");
 		break;
-			
-		case 1:
-			System.out.println("ival is odd");
-			break;
-			
-			
-			default:
-			System.out.println("break the loop");
+		case 1 : System.out.println("odd");
+		break;
+		
+		default:System.out.println("number not matched");
 		}
+	
+		
 	}
 	
 	
@@ -574,11 +600,10 @@ public class AllNewLogics
 	@Test(enabled=false)
 	public void test20()
 	{
-		String s1="i";
-		s1=s1+" love java";
-		
-		String s2="i love";
-		s2 +=" java";
+
+		String s1=new String("i love java");
+		String s2="i love java";
+
 		
 		String s3=s1.intern();
 		String s4=s2.intern();
@@ -590,7 +615,7 @@ public class AllNewLogics
 	}
 	
 
-	
+	@Test(enabled=false)
 	public static void square(int number)
 	{
 		int square=number*number;
@@ -600,6 +625,20 @@ public class AllNewLogics
 		if(number<9){
 		square(number);
 		}
+		
+//		int n=1;
+//		
+//		do{
+//			
+//			int square=n*n;
+//			System.out.println(square);
+//			n++;
+//
+//		}
+//		while(n<8);
+		
+		
+		
 	}
 	
 	@Test(enabled=false)
@@ -665,7 +704,7 @@ public class AllNewLogics
 	}
 	
 	
-	@Test 
+	@Test(enabled=false) 
 	public  void test23()
 	{
 
@@ -680,7 +719,7 @@ public class AllNewLogics
 	
 	@Parameters({"url","browser"})
 	@Test(enabled=true)
-	public  void test24(String url,String browser) throws InterruptedException
+	public  void test24(String url,String browser) throws InterruptedException, IOException
 	{
 		WebDriver driver = null;
 		if(browser.contains("firefox")){
@@ -713,18 +752,26 @@ public class AllNewLogics
 	//unhighlight
 	jse.executeScript("arguments[0].setAttribute('style', 'background: white');", username);
 	Thread.sleep(2000);
+	TakesScreenshot ts=(TakesScreenshot)driver;
+	File file = ts.getScreenshotAs(OutputType.FILE);
+	String path=System.getProperty("user.dir")+"/screenshots/";
+//	FileUtils.copyFile(file, new File(path+"test"+".png"));
+//	image_upload((path+"test"+".png"));
+	
 	driver.quit();
 	
 	
 	
 	}
+		
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public static void test25(String url,String browser) throws InterruptedException
 	{
-		WebDriver driver;
+
 //		System.setProperty("webdriver.gecko.driver", "D:\\New folder (3)\\geckodriver.exe");
 //		driver=new FirefoxDriver();
+		 WebDriver driver;
 		System.setProperty("webdriver.chrome.driver", ".//chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
@@ -758,8 +805,27 @@ public class AllNewLogics
 
 	
 
-	
-	
+	@Test(enabled=true) 
+	public  void test24(){
+		
+		List<NameValuePair> list=new ArrayList<NameValuePair>();
+		
+		list.add(new BasicNameValuePair("1","sagar") );
+		list.add(new BasicNameValuePair("2","max") );
+		
+		for(NameValuePair one:list){
+			
+			System.out.println(one);
+		}
+		
+		
+		
+	}
+	@Test(enabled=true) 
+	public  void test25(){
+		
+		System.out.println("test 25..");
+	}
 	
 	
 }

@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.com.automation.practise.pattern_programing">
+      <class name="org.com.automation.practise.AllNewLogics">
         <methods>
-          <include name="test7"/>
+          <include name="test13"/>
         </methods>
-      </class> <!-- org.com.automation.practise.pattern_programing -->
+      </class> <!-- org.com.automation.practise.AllNewLogics -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

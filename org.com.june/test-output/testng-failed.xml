@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Sagar ji ka Suite]" parallel="tests">
+  <test thread-count="2" name="chrome test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
     <classes>
-      <class name="org.com.automation.practise.pattern_programing">
+      <class name="org.com.automation.practise.AllNewLogics">
         <methods>
-          <include name="test7"/>
+          <include name="test24" invocation-numbers="0"/>
         </methods>
-      </class> <!-- org.com.automation.practise.pattern_programing -->
+      </class> <!-- org.com.automation.practise.AllNewLogics -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- chrome test(failed) -->
+</suite> <!-- Failed suite [Sagar ji ka Suite] -->
