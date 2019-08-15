@@ -824,7 +824,7 @@ public class AllNewLogics
 	@Test(enabled=true) 
 	public  void test25(){
 		
-		System.out.println("test 25...");
+		System.out.println("test 25.....");
 	}
 	
 	
