@@ -12,4 +12,15 @@
       </class> <!-- org.com.automation.practise.AllNewLogics -->
     </classes>
   </test> <!-- chrome test(failed) -->
+  <test thread-count="2" name="firefox test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="https://stag-5-cmo-1.convirza.com/"/>
+    <classes>
+      <class name="org.com.automation.practise.AllNewLogics">
+        <methods>
+          <include name="test24" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- org.com.automation.practise.AllNewLogics -->
+    </classes>
+  </test> <!-- firefox test(failed) -->
 </suite> <!-- Failed suite [Sagar ji ka Suite] -->
